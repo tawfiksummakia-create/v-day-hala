@@ -1,3 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إلى أميرة قلبي حلا ❤️</title>
+    <style>
+        body { margin: 0; padding: 0; background: #000; font-family: 'Segoe UI', sans-serif; color: white; overflow-x: hidden; }
+        .bg-image { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('background.jpg') no-repeat center center; background-size: cover; z-index: -1; filter: brightness(0.4); }
+        .content { display: flex; flex-direction: column; align-items: center; padding: 50px 20px; }
+        .section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        h1 { font-size: 45px; margin: 10px 0; }
+        .nickname { font-size: 20px; color: #ffe3ec; margin-bottom: 20px; }
+        .timeline-item { background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(10px); padding: 25px; border-radius: 20px; margin: 60px 0; width: 85%; max-width: 350px; opacity: 0; transform: translateY(30px); transition: 1s all ease; border: 1px solid rgba(255, 255, 255, 0.2); }
+        .timeline-item.visible { opacity: 1; transform: translateY(0); }
+        .date { font-size: 26px; font-weight: bold; color: #ff99c8; display: block; margin-bottom: 10px; }
+        .gallery-img { width: 100%; border-radius: 15px; margin-top: 15px; border: 2px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+        .final-msg { background: rgba(248, 68, 129, 0.2); padding: 30px; border-radius: 20px; border: 2px dashed #f84481; margin: 50px 0; line-height: 1.8; font-size: 20px; text-align: center; }
+        .music-btn { padding: 15px 40px; font-size: 18px; border: none; border-radius: 50px; background: #f84481; color: white; cursor: pointer; font-weight: bold; box-shadow: 0 0 20px rgba(248, 68, 129, 0.6); }
+        .heart { position: fixed; pointer-events: none; animation: floatUp linear forwards; z-index: 10; }
+        @keyframes floatUp { to { transform: translateY(-110vh) rotate(360deg); opacity: 0; } }
+    </style>
+</head>
+<body onclick="playMusic()" onscroll="playMusic()">
+
+<div class="bg-image"></div>
 <audio id="myAudio" loop preload="auto">
     <source src="song.mp3" type="audio/mpeg">
 </audio>
+
+<div class="content">
+    <div class="section">
+        <h1>حلا ❤️</h1>
+        <span class="nickname">دلوعتي.. فستوكتي.. حبيبي.. وبنوتييي 🧸</span>
+        <p>انزلي لتحت وشوفي ذكرياتنا يا أغلى شي عندي...</p>
+        <button class="music-btn" onclick="playMusic()">شغلي الأغنية 🎵</button>
+        <div style="margin-top: 40px; font-size: 30px;">⬇️</div>
+    </div>
+
+    <div class="timeline-item">
+        <span class="date">25/3/2025 🤪</span>
+        <p>بداية كل شي حلو بحياتي..</p>
+    </div>
+
+    <div class="timeline-item">
+        <span class="date">30/4/2025 🫂🌍</span>
+        <p>أغلى غمرة بالعالم، وقت صرتي كل كوني.</p>
+    </div>
+
+    <div class="timeline-item">
+        <span class="date">25/10/2025 🤭</span>
+        <p>First Date - اليوم اللي ما بنساه بحياتي</p>
+    </div>
+
+    <div class="timeline-item">
+        <span class="date">15/1/2026 😘</span>
+        <p>Second Date - كل يوم حبك بقلبي عم يكبر</p>
+        <img src="IMG_20260115_185057_799.webp" class="gallery-img">
+        <img src="IMG_20260115_185020_366.webp" class="gallery-img">
+    </div>
+
+    <div class="section">
+        <img src="IMG-20260110-WA0059.jpg" class="gallery-img" style="max-width: 300px;">
+        <div class="final-msg">
+            <h2>رسالة من قلبي إلك ❤️</h2>
+            <p>فستوكتييي و عمري انا هابييي فلانتاينننن هيهيهي سمعي انا مالي من الاشخاص الي بحبو هيك اعياد ولا بحببب بس انو انتي وقعتيني فيكييي و صرت احب و اهتم لانك صرتي بحياتي همم بهيك يوم بحس بكفي قلك اني بحبك</p>
+            <p><strong>بحبك دلوعة بحبك حياتي</strong></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    let audio = document.getElementById('myAudio');
+    function playMusic() {
+        audio.play().catch(e => console.log("Music ready"));
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.timeline-item').forEach(item => observer.observe(item));
+
+    setInterval(() => {
+        const el = document.createElement("div");
+        el.className = "heart"; el.innerHTML = "❤️";
+        el.style.left = Math.random() * 100 + "vw"; el.style.top = "105vh";
+        el.style.fontSize = Math.random() * 20 + 20 + "px";
+        el.style.animationDuration = Math.random() * 3 + 4 + "s";
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 6000);
+    }, 300);
+</script>
+</body>
+</html>
