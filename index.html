@@ -8,21 +8,18 @@
         body { margin: 0; padding: 0; background: #000; font-family: 'Segoe UI', sans-serif; color: white; overflow-x: hidden; }
         .bg-image { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('background.jpg') no-repeat center center; background-size: cover; z-index: -1; filter: brightness(0.4); }
         .content { display: flex; flex-direction: column; align-items: center; padding: 50px 20px; }
-        
-        /* تعديل قسم المقدمة ليكون الاسم أكبر ومرتفع للأعلى */
         .section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        .hero-section { justify-content: flex-start; pt-10vh; padding-top: 15vh; } 
-        
+        .hero-section { justify-content: flex-start; padding-top: 15vh; } 
         h1 { font-size: 70px; margin: 0; text-shadow: 0 0 20px rgba(248, 68, 129, 0.8); }
         .nickname { font-size: 22px; color: #ffe3ec; margin-top: 5px; display: block; }
-        
         .timeline-item { background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(10px); padding: 25px; border-radius: 20px; margin: 60px 0; width: 85%; max-width: 350px; opacity: 0; transform: translateY(30px); transition: 1s all ease; border: 1px solid rgba(255, 255, 255, 0.2); }
         .timeline-item.visible { opacity: 1; transform: translateY(0); }
         .date { font-size: 26px; font-weight: bold; color: #ff99c8; display: block; margin-bottom: 10px; }
         .gallery-img { width: 100%; border-radius: 15px; margin-top: 15px; border: 2px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
-        .final-msg { background: rgba(248, 68, 129, 0.2); padding: 30px; border-radius: 20px; border: 2px dashed #f84481; margin: 50px 0; line-height: 1.8; font-size: 20px; text-align: center; }
+        .final-msg { background: rgba(248, 68, 129, 0.2); padding: 30px; border-radius: 20px; border: 2px dashed #f84481; margin: 40px 0; line-height: 1.8; font-size: 20px; text-align: center; }
         .music-btn { padding: 15px 40px; font-size: 18px; border: none; border-radius: 50px; background: #f84481; color: white; cursor: pointer; font-weight: bold; text-decoration: none; display: inline-block; box-shadow: 0 0 20px rgba(248, 68, 129, 0.6); margin-top: 20px; }
         .heart { position: fixed; pointer-events: none; animation: floatUp linear forwards; z-index: 10; }
+        .bold-request { font-size: 18px; color: #ff99c8; font-style: italic; margin-bottom: 10px; direction: ltr; display: block; }
         @keyframes floatUp { to { transform: translateY(-110vh) rotate(360deg); opacity: 0; } }
     </style>
 </head>
@@ -74,7 +71,9 @@
             <p><strong>بحبك دلوعة بحبك حياتي</strong></p>
         </div>
 
-        <p style="font-size: 14px; opacity: 0.7;">أما كان عن حبي أنا... فأنتي كل الحب</p>
+        <span class="bold-request">can i fu*k u today بمناسبة هاليوم هيهي 👉🏼👈🏼</span>
+
+        <p style="font-size: 14px; opacity: 0.7;">أما كان عن حبي أنا... فإنتي كل الحب</p>
         
         <a href="https://www.youtube.com/watch?v=oaphfkOEqX4&t=191s" target="_blank" class="music-btn">شغلي الأغنية 🎵</a>
     </div>
