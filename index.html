@@ -16,24 +16,21 @@
         .date { font-size: 26px; font-weight: bold; color: #ff99c8; display: block; margin-bottom: 10px; }
         .gallery-img { width: 100%; border-radius: 15px; margin-top: 15px; border: 2px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
         .final-msg { background: rgba(248, 68, 129, 0.2); padding: 30px; border-radius: 20px; border: 2px dashed #f84481; margin: 50px 0; line-height: 1.8; font-size: 20px; text-align: center; }
-        .music-btn { padding: 15px 40px; font-size: 18px; border: none; border-radius: 50px; background: #f84481; color: white; cursor: pointer; font-weight: bold; box-shadow: 0 0 20px rgba(248, 68, 129, 0.6); }
+        .music-btn { padding: 15px 40px; font-size: 18px; border: none; border-radius: 50px; background: #f84481; color: white; cursor: pointer; font-weight: bold; text-decoration: none; display: inline-block; box-shadow: 0 0 20px rgba(248, 68, 129, 0.6); }
         .heart { position: fixed; pointer-events: none; animation: floatUp linear forwards; z-index: 10; }
         @keyframes floatUp { to { transform: translateY(-110vh) rotate(360deg); opacity: 0; } }
     </style>
 </head>
-<body onclick="playMusic()" onscroll="playMusic()">
+<body>
 
 <div class="bg-image"></div>
-<audio id="myAudio" loop preload="auto">
-    <source src="song.mp3" type="audio/mpeg">
-</audio>
 
 <div class="content">
     <div class="section">
         <h1>حلا ❤️</h1>
         <span class="nickname">دلوعتي.. فستوكتي.. حبيبي.. وبنوتييي 🧸</span>
         <p>انزلي لتحت وشوفي ذكرياتنا يا أغلى شي عندي...</p>
-        <button class="music-btn" onclick="playMusic()">شغلي الأغنية 🎵</button>
+        <a href="https://www.youtube.com/watch?v=oaphfkOEqX4&t=191s" target="_blank" class="music-btn">شغلي الأغنية 🎵</a>
         <div style="margin-top: 40px; font-size: 30px;">⬇️</div>
     </div>
 
@@ -71,11 +68,6 @@
 </div>
 
 <script>
-    let audio = document.getElementById('myAudio');
-    function playMusic() {
-        audio.play().catch(e => console.log("تحتاج لمسة"));
-    }
-
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) entry.target.classList.add('visible');
