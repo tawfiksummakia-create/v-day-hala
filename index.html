@@ -19,6 +19,7 @@
         .music-btn { padding: 15px 40px; font-size: 18px; border: none; border-radius: 50px; background: #f84481; color: white; cursor: pointer; font-weight: bold; text-decoration: none; display: inline-block; box-shadow: 0 0 20px rgba(248, 68, 129, 0.6); }
         .heart { position: fixed; pointer-events: none; animation: floatUp linear forwards; z-index: 10; }
         @keyframes floatUp { to { transform: translateY(-110vh) rotate(360deg); opacity: 0; } }
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);} }
     </style>
 </head>
 <body>
@@ -56,8 +57,16 @@
         <img src="IMG_20260115_185020_366.webp" class="gallery-img">
     </div>
 
+    <div class="timeline-item">
+        <span class="date">وايفيييي 💍</span>
+        <img src="IMG-20260116-WA0011.jpg" class="gallery-img">
+        <p>إنتي عيوني اللي بشوف فيها الدنيا.</p>
+    </div>
+
     <div class="section">
         <img src="IMG-20260110-WA0059.jpg" class="gallery-img" style="max-width: 300px;">
+        <p style="margin-top: 15px; font-weight: bold;">ايدك بايدي لحتى نخطي كل خطوة مع بعض ❤️</p>
+        
         <div class="final-msg">
             <h2>رسالة من قلبي إلك ❤️</h2>
             <p>فستوكتييي و عمري انا هابييي فلانتاينننن هيهيهي سمعي انا مالي من الاشخاص الي بحبو هيك اعياد ولا بحببب بس انو انتي وقعتيني فيكييي و صرت احب و اهتم لانك صرتي بحياتي همم بهيك يوم بحس بكفي قلك اني بحبك</p>
@@ -85,10 +94,5 @@
         setTimeout(() => el.remove(), 6000);
     }, 300);
 </script>
-
-<style>
-    @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);} }
-</style>
-
 </body>
 </html>
